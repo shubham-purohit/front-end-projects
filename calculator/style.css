@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    box-sizing: border-box;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: beige; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 100vw;
+}
+
+main {
+    margin-top: 1.2rem;
+    width: 35%;
+    background-color: rgb(170, 164, 164);
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+.screen {
+    background-color: whitesmoke;
+    font-size: 3rem;
+    font-family: 'Courier New', Courier, monospace;
+    height: 15vh;
+    width: 100%;
+    text-align: right;
+    resize: none;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.keypad {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.top-panel {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.bottom-panel {
+    display: flex;
+}
+
+.left-pane {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    align-content: flex-start;
+}
+
+.btn {
+    width: 138px;
+    height: 125px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: gray;
+    color: white;
+}
+
+.result {
+    min-height: 528px;
+    min-width: 138px;
+    background-color: rgb(27, 161, 238);
+    cursor: pointer;
+}
+
+.result:hover {
+    background-color: rgb(24, 133, 197);
+}

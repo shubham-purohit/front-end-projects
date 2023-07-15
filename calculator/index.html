@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header><h2 id="h1">Calculator</h2></header>
+    <main>
+      <div>
+        <textarea class="screen" id="screen" disabled="true">0</textarea>
+      </div>
+      <div class="keypad">
+        <div class="top-panel">
+          <button class="btn" onclick="addOperator('+')">&plus;</button>
+          <button class="btn" onclick="addOperator('-')">&minus;</button>
+          <button class="btn" onclick="addOperator('*')">&cross;</button>
+          <button class="btn" onclick="addOperator('/')">&divide;</button>
+        </div>
+        <div class="bottom-panel">
+          <div class="left-pane">
+            <button class="btn" onclick="buttonClick(9)">9</button>
+            <button class="btn" onclick="buttonClick(8)">8</button>
+            <button class="btn" onclick="buttonClick(7)">7</button>
+            <button class="btn" onclick="buttonClick(6)">6</button>
+            <button class="btn" onclick="buttonClick(5)">5</button>
+            <button class="btn" onclick="buttonClick(4)">4</button>
+            <button class="btn" onclick="buttonClick(3)">3</button>
+            <button class="btn" onclick="buttonClick(2)">2</button>
+            <button class="btn" onclick="buttonClick(1)">1</button>
+            <button class="btn" onclick="clearScreen()">AC</button>
+            <button class="btn" onclick="buttonClick(0)">0</button>
+            <button class="btn" onclick="buttonClick('.')">.</button>
+          </div>
+          <button class="result" onclick="calculate()">&equals;</button>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
