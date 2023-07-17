@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header><h1>To-Do List</h1></header>
+    <main class="container">
+      <section>
+        <textarea id="note" placeholder="Your note here..."></textarea>
+        <button id="save" class="save-note" onclick="saveNote(id)">Save</button>
+      </section>
+      <section>
+        <p>Pending Tasks</p>
+        <hr />
+        <p id="error-pending" class="data-not-found">No Records Found!</p>
+        <ul id="pendingTask"></ul>
+      </section>
+      <section>
+        <p>Completed Tasks</p>
+        <hr />
+        <p id="error-completed" class="data-not-found">No Records Found!</p>
+        <ul id="completedTask"></ul>
+      </section>
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>

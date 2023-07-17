@@ -75,11 +75,6 @@ img {
     font-size: 0.8rem;
 }
 
-.data-not-found {
-    background-color: crimson;
-    color: crimson;
-}
-
 @media (min-width:950px) {
 
     .grid-col-span {
