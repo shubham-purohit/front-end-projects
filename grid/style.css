@@ -6,6 +6,7 @@
 
 :root {
     --BG_WHITE: white;
+    --SHADOW: 10px 15px 15px -5px black;
 }
 
 body {
@@ -23,6 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    box-shadow: var(--SHADOW);
 }
 
 .testimonial-grid {
@@ -73,6 +75,11 @@ img {
     font-size: 0.8rem;
 }
 
+.data-not-found {
+    background-color: crimson;
+    color: crimson;
+}
+
 @media (min-width:950px) {
 
     .grid-col-span {
@@ -91,11 +98,23 @@ img {
     
     .testimonial-grid {
         display: grid;
-        gap: 1rem;
+        gap: 1.5rem;
         grid-template-columns: repeat(4, 1fr);
     }
 
     body {
         font-size: 1.2rem;
     }
+}
+
+.profile p::after {
+    content: close-quote;
+    color: white;
+
+}
+
+.profile p::before {
+    content: open-quote;
+    color: white;
+
 }
