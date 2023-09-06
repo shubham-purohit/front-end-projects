@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link href="style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="search">
+      <header>
+        <h1>Weather App</h1>
+      </header>
+      <form action="" id="form">
+        <label><i class="far fa-map-marker-alt"></i></label>
+        <select for="" id="city_list">
+          <option value="">SELECT</option>
+          <option value="Jodhpur">Jodhpur</option>
+          <option value="Mumbai">Mumbai</option>
+        </select>
+        <button type="submit">Search</button>
+      </form>
+    </nav>
+    <main>
+      <section class="current">
+        <h1><span id="loc"></span></h1>
+        <h1><span id="temp_cur"></span>&degC</h1>
+        <p>
+          Feels like <span id="feels_like"></span>&degC |
+          <span id="weather"></span>
+        </p>
+      </section>
+      <section class="additional">
+        <p>
+          <b>Wind: </b><span id="wind_speed"></span> kmph
+          <span id="wind_degree"></span>&deg <span id="wind_dir"></span>
+        </p>
+        <p><b>Pressure: </b><span id="pressure"></span> in</p>
+        <p><b>Humidity: </b><span id="humidity"></span></p>
+        <p><b>UV Radiation: </b><span id="uv"></span></p>
+        <p><b>Precipitation: </b><span id="precipitation"></span></p>
+      </section>
+      <section class="container">
+        <div class="card">
+          <h3>Today</h3>
+          <div>
+            <h1><span id="temp_today"></span>&degC</h1>
+            <p>
+              <span><span id="temp_min_today"></span>&degC</span>
+              <span><span id="temp_max_today"></span>&degC</span>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Tomorrow</h3>
+          <div>
+            <h1><span id="temp_tom"></span>&degC</h1>
+            <p>
+              <span><span id="temp_min_tom"></span>&degC</span>
+              <span><span id="temp_max_tom"></span>&degC</span>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>8th September 2023</h3>
+          <div>
+            <h1><span id="temp_after_tom"></span>&degC</h1>
+            <p>
+              <span><span id="temp_min_after_tom"></span>&degC</span>
+              <span><span id="temp_max_after_tom"></span>&degC</span>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>
