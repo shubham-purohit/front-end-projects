@@ -9,9 +9,8 @@
     --FONT_SIZE_XL: 1.5rem;
 }
 
-header h1 {
-    text-align: center;
-    margin-top: 0.5rem;
+main {
+    margin: auto;
 }
 
 body {
@@ -21,11 +20,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-textarea {
+input {
     width: 100%;
     font-size: var(--FONT_SIZE_XL);
     min-height: 5rem;
-    border-radius: 0.2rem;
     resize: none;
     padding: 0.4rem;
 }
@@ -56,25 +54,37 @@ li {
     align-content: center;
     padding: 0.2rem 0.5rem;
     border-bottom: 0.5px solid white;
-}
-
-li input {
-    align-self: center;
-}
-
-li:hover {
-    box-shadow: 5px 10px 10px -2.5px black;
-}
-
-li button {
-    border: none;
     width: 100%;
     padding: 1rem;
     text-align: left;
     font-size: var(--FONT_SIZE_XL);
     background-color: transparent;
+    justify-content: space-between;
+}
+
+li p {
+    font-weight: 100;
+}
+
+li button {
+    background-color: red;
+    width: 50px;
+    border: none;
+    padding: 5px;
+    color: white;
+    border-radius: 2px;
+}
+
+li button:hover {
+    cursor: pointer;
+    box-shadow: 1px 3px 3px -0.2px black;
+}
+
+li:hover {
+    box-shadow: 5px 10px 10px -2.5px black;
     cursor: pointer;
 }
+
 hr {
     margin-top: 0.5rem;
 }
@@ -82,6 +92,11 @@ hr {
 .strike {
     text-decoration: line-through;
     opacity: 0.7;
+}
+
+.strike button {
+    text-decoration: none;
+    opacity: 1;
 }
 
 .strike:hover {
@@ -93,6 +108,7 @@ hr {
     margin-top: 0.5rem;
     padding: 0.2rem;
     float: right;
+    margin-left: 5px;
     min-width: 8vw;
     height: 4vh;
     background-color: black;
@@ -114,7 +130,11 @@ hr {
         font-size: 1rem;
     }
 
-    textarea {
+    main {
+        margin-top: 0;
+    }
+
+    input {
         font-size: 1rem;
     }
 
@@ -122,10 +142,6 @@ hr {
         padding: 0.5rem;
         margin-top: 0;
         margin-bottom: 0.5rem;
-    }
-
-    header h1 {
-        display: none;
     }
 
     .save-note {
@@ -142,9 +158,13 @@ hr {
         padding: 0.5rem;
     }
 
-    li button {
+    li p {
         font-size: 1rem;
         padding: 0;
+    }
+
+    li button {
+        font-size: 0.8rem;
     }
 
     .data-not-found {

@@ -4,25 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/4654007d04.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <header><h1>To-Do List</h1></header>
     <main class="container">
       <section>
-        <textarea id="note" placeholder="Your note here..."></textarea>
-        <button id="save" class="save-note" onclick="saveNote(id)">Save</button>
+        <form action="#" onsubmit="saveNote()">
+          <input id="note" placeholder="Your task here..." type="text" />
+          <button
+            type="reset"
+            id="reset"
+            class="save-note"
+            onclick="resetAll()"
+          >
+            Clear All
+          </button>
+          <button type="submit" id="save" class="save-note">Save</button>
+        </form>
       </section>
       <section>
         <p>Pending Tasks</p>
         <hr />
-        <p id="error-pending" class="data-not-found">No Records Found!</p>
+        <p id="error_pending" class="data-not-found">No Records Found!</p>
         <ul id="pendingTask"></ul>
       </section>
       <section>
         <p>Completed Tasks</p>
         <hr />
-        <p id="error-completed" class="data-not-found">No Records Found!</p>
+        <p id="error_completed" class="data-not-found">No Records Found!</p>
         <ul id="completedTask"></ul>
       </section>
     </main>
