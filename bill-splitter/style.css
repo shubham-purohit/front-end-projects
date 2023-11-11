@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --DARK: rgb(12, 75, 165);
+    --LIGHT: rgb(107, 176, 255);
+    --EX_LIGHT: rgb(183, 209, 246);
+    --WHITE: white;
+    --GRAY: rgb(238, 234, 234);
+}
+
+body {
+    min-height: 100vh;
+    color: white;
+    background-color: aliceblue;
+    /* font-family: 'JetBrains Mono', monospace; */
+    font-family: 'Sometype Mono', monospace;
+    padding: 50px;
+}
+
+.padding {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--EX_LIGHT);
+    height: 90vh;
+}
+
+.container {
+    width: 60%;
+    border-radius: 20px;
+    /* height: 450px; */
+    background-color: var(--WHITE);
+    padding: 30px;
+    display: flex;
+}
+
+header {
+    letter-spacing: 2ch;
+    color: var(--DARK);
+}
+
+.left-pane {
+    border-radius: 4%;
+    color: var(--DARK);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 15px 45px 15px 15px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.right-pane {
+    background-color: var(--DARK);
+    border-radius: 4%;
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-pane > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-control > input {
+    background-color: var(--GRAY);
+    color: var(--LIGHT);
+    font-family: inherit;
+    font-size: 1.2rem;
+    padding: 10px;
+    text-align: right;
+    border-radius: 5px;
+    border: none;
+    outline: 1.5px solid var(--GRAY);
+}
+
+input:focus {
+    outline: 1.5px solid var(--LIGHT);
+}
+
+.form-control > input::placeholder {
+    color: var(--LIGHT);
+}
+
+.tip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.tip-select {
+    background-color: var(--DARK);
+    color: var(--WHITE);
+    border: none;
+    padding: 10px 5px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: large;
+    width: 100%;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.tip-select:hover, .tip-active {
+   background-color: var(--LIGHT);
+   color: var(--DARK); 
+}
+
+.tip-custom {
+    background-color: var(--GRAY);
+    color: var(--DARK);
+    cursor: text;
+}
+
+.tip-custom:hover {
+    background-color: var(--GRAY);
+}
+
+.tip-custom::placeholder {
+    color: var(--DARK);
+}
+
+.amount {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.amount > h1 {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--LIGHT);
+}
+
+.amount > span > p:last-of-type {
+    color: rgb(185, 184, 184);
+    font-size: 0.8rem;
+}
+
+.btn-reset {
+    background-color: var(--LIGHT);
+    color: var(--DARK);
+    font-weight: bold;
+}
+
+label {
+    font-size: 0.8rem;
+}
+
+.input-red {
+    outline: 1.5px solid red !important;
+}
+
+.error-no {
+    visibility: hidden;
+}
+
+.error {
+    color: red;
+    float: right;
+    visibility: visible;
+}
+
+@media (max-width:1250px) {
+    .tip-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .left-pane {
+        gap: 1rem;
+    }
+
+    .right-pane {
+        align-items: flex-start;
+    }    
+
+    .amount {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .amount > h1 {
+        font-size: 2rem;
+    }
+
+}
+
+@media (max-width:950px) {
+    body {
+        padding: 0;
+        background-color: var(--EX_LIGHT);
+        font-size: small;
+    }
+
+    .padding {
+        /* gap:1rem; */
+        padding: 1rem 0;
+        height: 100vh;
+    }
+    
+    .container {
+        width: 90%;
+    }
+
+    .amount > h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width:600px) {
+    body {
+        padding: 0;
+        background-color: var(--EX_LIGHT);
+        font-size: small;
+    }
+
+    .padding {
+        gap:1rem;
+        padding: 1rem 0;
+        justify-content: flex-start;
+        height: 100vh;
+    }
+
+    .container {
+        width: 90%;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .left-pane {
+        width: 100%;
+        padding: 0;
+    }
+
+    .right-pane {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .right-pane > div {
+        gap: 1rem;
+    }
+
+    .amount {
+        gap: 0.5rem;
+    }
+
+    .amount > h1 {
+        font-size: 1.5rem;
+    }
+}
