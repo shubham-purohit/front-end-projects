@@ -1,101 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bill Splitter</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Sometype+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div class="padding">
-      <header>
-        <h2>SPLI</h2>
-        <h2>TTER</h2>
-      </header>
-      <main class="container">
-        <aside class="left-pane">
-          <div class="form-control">
-            <label for="input">Bill</label>
-            <input
-              type="text"
-              placeholder="0"
-              id="bill_amount"
-              inputmode="numeric"
-              oninput="input_value(event)"
-            />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bill Splitter</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Sometype+Mono&display=swap"
+    rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/4654007d04.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div class="padding">
+    <header>
+      <h2>SPLI</h2>
+      <h2>TTER</h2>
+    </header>
+    <main class="container">
+      <aside class="left-pane">
+        <div class="form-control">
+          <label for="input">Bill</label>
+          <span id="bill_amount_label" class="input-outline">
+            <i class="fa-solid fa-indian-rupee-sign" style="color: #aaaaaa;"></i>
+            <input type="text" placeholder="0" id="bill_amount" class="input-val" onfocus="toggle_outline(id)" onblur="toggle_outline(id)" oninput="input_value(event)" />
+        </div>
+        </span>
+        <div class="form-control">
+          <label for="input">Select Tip %</label>
+          <div class="tip-grid">
+            <button id="tip_5" class="tip-select" onclick="add_tip(5, id)">
+              5%
+            </button>
+            <button id="tip_10" class="tip-select" onclick="add_tip(10, id)">
+              10%
+            </button>
+            <button id="tip_15" class="tip-select" onclick="add_tip(15, id)">
+              15%
+            </button>
+            <button id="tip_25" class="tip-select" onclick="add_tip(25, id)">
+              25%
+            </button>
+            <button id="tip_50" class="tip-select" onclick="add_tip(50, id)">
+              50%
+            </button>
+            <input class="tip-select tip-custom" type="text" id="tip_custom" placeholder="Custom"
+              oninput="input_value(event, id)" />
           </div>
-          <div class="form-control">
-            <label for="input">Select Tip %</label>
-            <div class="tip-grid">
-              <button id="tip_5" class="tip-select" onclick="add_tip(5, id)">
-                5%
-              </button>
-              <button id="tip_10" class="tip-select" onclick="add_tip(10, id)">
-                10%
-              </button>
-              <button id="tip_15" class="tip-select" onclick="add_tip(15, id)">
-                15%
-              </button>
-              <button id="tip_25" class="tip-select" onclick="add_tip(25, id)">
-                25%
-              </button>
-              <button id="tip_50" class="tip-select" onclick="add_tip(50, id)">
-                50%
-              </button>
-              <input
-                class="tip-select tip-custom"
-                type="text"
-                inputmode="numeric"
-                id="tip_custom"
-                placeholder="Custom"
-                oninput="input_value(event, id)"
-              />
-            </div>
+        </div>
+        <div class="form-control">
+          <label for="input">Number of People<span id="error_count" class="error-no">Can't be zero</span></label><span id="bill_count_label"  class="input-outline">
+            <i class="fa-solid fa-user" style="color: #aaaaaa;"></i>
+
+            <input type="text" placeholder="0" id="bill_count" inputmode="numeric" class="input-val" onfocus="toggle_outline(id)" onblur="toggle_outline(id)" oninput="input_count(event)" />
+          </span>
+        </div>
+      </aside>
+      <aside class="right-pane">
+        <div>
+          <div class="amount">
+            <span>
+              <p>Tip Amount</p>
+              <p>/ person</p>
+            </span>
+            <h1>₹​</i><span id="tip_pp">0.00</span></h1>
           </div>
-          <div class="form-control">
-            <label for="input"
-              >Number of People<span id="error_count" class="error-no"
-                >Can't be zero</span
-              ></label
-            >
-            <input
-              type="text"
-              placeholder="0"
-              id="bill_count"
-              inputmode="numeric"
-              oninput="input_count(event)"
-            />
+          <div class="amount">
+            <span>
+              <p>Total</p>
+              <p>/ person</p>
+            </span>
+            <h1>₹​</i><span id="total_pp">0.00</span></h1>
           </div>
-        </aside>
-        <aside class="right-pane">
-          <div>
-            <div class="amount">
-              <span
-                ><p>Tip Amount</p>
-                <p>/ person</p>
-              </span>
-              <h1>$<span id="tip_pp">0.00</span></h1>
-            </div>
-            <div class="amount">
-              <span
-                ><p>Total</p>
-                <p>/ person</p>
-              </span>
-              <h1>$<span id="total_pp">0.00</span></h1>
-            </div>
-          </div>
-          <button class="tip-select btn-reset" onclick="reset_data()">
-            RESET
-          </button>
-        </aside>
-      </main>
-    </div>
-  </body>
+        </div>
+        <button class="tip-select btn-reset" onclick="reset_data()">
+          RESET
+        </button>
+      </aside>
+    </main>
+  </div>
+</body>
+
 </html>

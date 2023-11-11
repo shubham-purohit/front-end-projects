@@ -16,8 +16,8 @@ body {
     min-height: 100vh;
     color: white;
     background-color: aliceblue;
-    /* font-family: 'JetBrains Mono', monospace; */
-    font-family: 'Sometype Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
+    /* font-family: 'Sometype Mono', monospace; */
     padding: 50px;
 }
 
@@ -34,7 +34,6 @@ body {
 .container {
     width: 60%;
     border-radius: 20px;
-    /* height: 450px; */
     background-color: var(--WHITE);
     padding: 30px;
     display: flex;
@@ -53,7 +52,6 @@ header {
     flex-direction: column;
     gap: 2rem;
     padding: 15px 45px 15px 15px;
-    font-family: 'JetBrains Mono', monospace;
 }
 
 .right-pane {
@@ -78,20 +76,36 @@ header {
     gap: 10px;
 }
 
-.form-control > input {
+.input-outline {
+    background-color: var(--GRAY);
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    outline: 1.5px solid var(--GRAY);
+    display: flex;
+}
+
+.input-outline-focus {
+    outline: 1.5px solid var(--DARK);
+}
+
+.form-control > span > input {
+    float: right;
     background-color: var(--GRAY);
     color: var(--LIGHT);
     font-family: inherit;
     font-size: 1.2rem;
-    padding: 10px;
     text-align: right;
-    border-radius: 5px;
     border: none;
-    outline: 1.5px solid var(--GRAY);
+    width: 100%;
 }
 
-input:focus {
+.input-outline > input:focus {
     outline: 1.5px solid var(--LIGHT);
+}
+
+.input-outline > input:focus {
+    outline: none;
 }
 
 .form-control > input::placeholder {
@@ -102,6 +116,10 @@ input:focus {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+}
+
+i {
+    align-self: center;
 }
 
 .tip-select {
@@ -125,15 +143,21 @@ input:focus {
 .tip-custom {
     background-color: var(--GRAY);
     color: var(--DARK);
-    cursor: text;
+    text-align: right;
 }
 
 .tip-custom:hover {
     background-color: var(--GRAY);
+    cursor: text;
 }
 
 .tip-custom::placeholder {
     color: var(--DARK);
+    text-align: center;
+}
+
+.tip-custom:focus {
+    outline: 1.5px solid var(--DARK);
 }
 
 .amount {
