@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <form id="form" action="">
+      <label for="name">
+        Name
+        <input id="name" type="text" value="Anonymous" />
+      </label>
+      <label for="difficulty">
+        Difficulty
+        <select id="difficulty">
+          <option value="1">Low</option>
+          <option value="2">Medium</option>
+          <option value="3">High</option>
+        </select>
+      </label>
+      <button
+        type="submit"
+        class="btn btn-start"
+        onclick="generate_game(event)"
+      >
+        Start Game
+      </button>
+    </form>
+    <div id="game" class="game remove">
+      <div>
+        <div class="status" id="status">
+          <p><span id="user"></span><span id="result"></span></p>
+          <p>
+            <span id="lives_count"></span>
+            <img class="lives" src="./images/heart.svg" />
+          </p>
+        </div>
+        <div id="board" class="board"></div>
+      </div>
+      <button class="btn btn-reset" onclick="reset_game()">Reset</button>
+      <button class="btn btn-back" onclick="back_to_menu()">
+        Back to Main menu
+      </button>
+    </div>
+  </body>
+</html>
