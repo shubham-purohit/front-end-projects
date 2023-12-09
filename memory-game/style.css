@@ -34,8 +34,8 @@ input {
     -webkit-appearance: none;
     -moz-appearance: none;
     border: 1px solid black;
-    border-radius: 5px;
     font-size: 0.8rem;
+    border-radius: 5px;
 }
 
 input:focus {
@@ -53,10 +53,13 @@ select {
     background-color: white;
     font-size: inherit;
     font-family: inherit;
+    color: black;
+    border: 1px solid black;
     width: 100%;
     padding: 10px;
     margin-top: 10px;
     font-size: 0.8rem;
+    border-radius: 5px;
 }
 
 form button {
@@ -119,7 +122,7 @@ p {
 
 .block {
     width: 100px;
-    height: 100px;
+    aspect-ratio: 1/1;
     cursor: pointer;
     transition: all 500ms ease-in;
 }
@@ -171,6 +174,7 @@ p {
     cursor: pointer;
     font-size: 1.1rem;
     font-family: inherit;
+    border-radius: 5px;
     transition: transform 200ms;
 }
 
@@ -202,5 +206,9 @@ p {
 @media (max-width:800px) {
     form {
         width: 80%;
+    }
+
+    .block {
+        width: 80px;
     }
 }
