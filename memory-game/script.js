@@ -5,10 +5,11 @@ let user_name = 'Anonymous'
 let level = 1
 let final_size = 0;
 let lives = 3;
+let open_ids = []
 const colors = ['red', 'blue', 'yellow', 'brown', 'green', 'purple', 'pink', 'navy']
 
 const flip = (id) => {
-    if(previousId==id || lives===0) {
+    if(previousId==id || lives===0 || open_ids.includes(id)) {
         return
     }
     const color = document.getElementById(id).classList[1]
@@ -20,6 +21,8 @@ const flip = (id) => {
         return
     }
     if(previousBlock==color) {
+        open_ids.push(id)
+        open_ids.push(previousId)
         reset()
         count++;
     } else {
@@ -42,7 +45,7 @@ const flip = (id) => {
 }
 
 const back_to_menu = () => {
-    reset()
+    reset_game()
     document.getElementById('game').classList.add('remove')
     document.getElementById('form').classList.remove('remove')
     user_name = 'anonymous'
@@ -54,6 +57,7 @@ const back_to_menu = () => {
 const reset_game = () => {
     reset();
     count=0;
+    open_ids = []
     const lst = document.getElementsByClassName('block');
     [...lst].forEach(element => {
         const id = element.id

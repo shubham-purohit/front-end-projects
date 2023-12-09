@@ -83,6 +83,11 @@ form button {
     gap: 1rem;
     background-color: aliceblue;
     padding: 2rem;
+    width: 30%;
+}
+
+.game > div {
+    width: 100%;
 }
 
 .status {
@@ -121,7 +126,6 @@ p {
 }
 
 .block {
-    width: 100px;
     aspect-ratio: 1/1;
     cursor: pointer;
     transition: all 500ms ease-in;
@@ -208,7 +212,11 @@ p {
         width: 80%;
     }
 
-    .block {
-        width: 80px;
+    .game, .game > div {
+        width: 100%;
+    }
+
+    .board {
+        width: 100%;
     }
 }
